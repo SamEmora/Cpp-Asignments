@@ -16,7 +16,7 @@ int main()
     return 0;
 }
 
-Example Output:
-Marcelo started this week with 15000 followers. 
-He gained 6750 this week. 
-He ended the week with 21750 total followers. 
+// Example Output:
+// Marcelo started this week with 15000 followers. 
+// He gained 6750 this week. 
+// He ended the week with 21750 total followers. 
