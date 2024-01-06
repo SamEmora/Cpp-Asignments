@@ -1,0 +1,21 @@
+// Samuel Morales
+// 8/9/23
+// This program calculates twitter followers
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+   int startingFollowers = 15000; //int variable is decalred with "followers" inside
+   double newFollowers = startingFollowers * 0.45;
+   double totalFollowers = startingFollowers + newFollowers; //adds variables startingFollowers and newFollowers to make a new variable with the sum inside
+    cout << "Marcelo started this week with " << startingFollowers << " followers. \n";
+    cout << "He gained " << newFollowers << " this week. \n";
+    cout << "He ended the week with " << totalFollowers << " total followers. \n";
+    return 0;
+}
+
+Marcelo started this week with 15000 followers. 
+He gained 6750 this week. 
+He ended the week with 21750 total followers. 
