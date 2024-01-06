@@ -1,0 +1,29 @@
+
+Please enter a dollar amount to convert into Bitcoin and Dogecoin: 500
+Using the conversion rates of 3.8e-05 Bitcoin per dollar and 15.6518 Dogecoin per dollar:
+500 dollars = 0.019 Bitcoin.
+500 dollars = 7825.9 Dogecoin.
+
+// Samuel Morales 
+// MW 9/17/23
+//This program converts dollar into bitcoin and dogecoin
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const double BTC_PER_DOLLAR = 0.000038;
+    const double DOGE_PER_DOLLAR = 15.6518;
+    double dollars; 
+
+    cout << "Please enter a dollar amount to convert into Bitcoin and Dogecoin: ";
+    cin >> dollars; //This asks the user for a dollar amount to convert.
+    double bitcoin = dollars * BTC_PER_DOLLAR; // multiplies bitcoin by the amount of dollars given
+    double dogecoin = dollars * DOGE_PER_DOLLAR; // multiplies dogecoin by the amount of dollars given
+    cout << "Using the conversion rates of " << BTC_PER_DOLLAR << " Bitcoin per dollar and " << DOGE_PER_DOLLAR << " Dogecoin per dollar:\n";
+    
+    cout << dollars << " dollars = " << bitcoin << " Bitcoin." << endl;
+    cout << dollars << " dollars = " << dogecoin << " Dogecoin." << endl;
+
+    return 0;
+}
