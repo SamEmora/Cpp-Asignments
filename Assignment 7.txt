@@ -1,0 +1,67 @@
+What is your question for the all-knowing Magic 8 ball?
+Will the Rangers win the World Series?
+
+Magic 8 ball says... 
+A resounding YES
+Would you like to know the future again? (y/n): y
+What is your question for the all-knowing Magic 8 ball?
+Should I have tacos for dinner tonight?
+
+Magic 8 ball says... 
+I have no idea – you should phone a friend
+Would you like to know the future again? (y/n): n
+
+
+
+// Samuel Morales
+// 11/5/23
+// This programs simulates a 8 ball toy by asking the user a question and giving a response
+
+#include <iostream>
+#include <string> // Allows the use of string
+#include <cstdlib> // Allows the use of rand
+#include <ctime> // Allows the use of time
+
+using namespace std;
+
+int main() {
+    
+    char playAgain; // Declares a char variable to store a character, y or n in playAgain later on 
+    string question; // Declares a string variable to hold the users input
+    string eightBallResponse; // Declares a string variable to store the chosen 8 ball question from the random adress chosen in the array 
+    int randomQ; // Declares a int variable to hold a randomly chosen integer
+    
+    // Creates an array to hold the possible 8 ball responses
+    // string is used to hold the responses
+    string responses[] = 
+    {
+        "Not on your life",
+        "That’s gonna be a NO from me",
+        "Absolutely!",
+        "Murky the future is",
+        "A resounding YES",
+        "I have no idea – you should phone a friend",
+        "Sounds OK to me",
+        "I sincerely doubt it"
+    };
+
+    srand(time(0)); // Selects a random and different number everytime the program is ran
+
+    do 
+    {
+        cout << "What is your question for the all-knowing Magic 8 ball?" << endl; // Asks the user for a question
+        getline(cin, question); // Stores the users input inside of question
+
+        int randomQ = rand() % 9; // Randomly chooses a number between 0 and 8 and stores it in randomQ, which is used to pick a question in the array responses
+        string eightBallResponse = responses[randomQ]; // Stores the random response chosen in eightBallResponse
+
+        cout << "\nMagic 8 ball says... " << endl;
+        cout << eightBallResponse << endl; // Prints the random eightBallResponse chosen
+
+        cout << "Would you like to know the future again? (y/n): "; // Asks the user if they would like to play again
+        cin.ignore(); // This clears the previous input allowing the compiler to print the new new one
+
+    } while (playAgain == 'y' || playAgain == 'Y'); // This lets the user play again or lets the user stop the program
+
+    return 0;
+}
