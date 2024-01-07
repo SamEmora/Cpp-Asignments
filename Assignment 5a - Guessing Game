@@ -1,38 +1,3 @@
-Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is.
-How high would you like the guessing range to be? 50
-I'm thinking of a number! What is it? 25
-Too low. Try again: 30
-Too low. Try again: 40
-Too high. Try again: 36
-Too low. Try again: 37
-Too low. Try again: 38
-Too low. Try again: 39
-You guessed it! It took 7 tries.
-*** You've set a new record for the lowest number of guesses! ***
-Would you like to play again? Y/N: y
-Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is.
-How high would you like the guessing range to be? 50
-I'm thinking of a number! What is it? 30
-Too high. Try again: 20
-Too high. Try again: 10
-You guessed it! It took 3 tries.
-*** You've set a new record for the lowest number of guesses! ***
-Would you like to play again? Y/N: y
-Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is.
-How high would you like the guessing range to be? 50
-I'm thinking of a number! What is it? 25
-Too high. Try again: 30
-Too high. Try again: 10
-Too low. Try again: 20
-Too high. Try again: 15
-Too low. Try again: 16
-Too low. Try again: 17
-Too low. Try again: 18
-Too low. Try again: 19
-You guessed it! It took 9 tries.
-Would you like to play again? Y/N:  
-
-
 // Samuel Morales
 // 9/12/23
 // This programs creates a Guessing Game
@@ -82,3 +47,17 @@ int main() {
 
     return 0;
 }
+
+// Example Output:
+// Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is.
+// How high would you like the guessing range to be? 50
+// I'm thinking of a number! What is it? 25
+// Too low. Try again: 30
+// Too low. Try again: 40
+// Too high. Try again: 36
+// Too low. Try again: 37
+// Too low. Try again: 38
+// Too low. Try again: 39
+// You guessed it! It took 7 tries.
+// *** You've set a new record for the lowest number of guesses! ***
+// Would you like to play again? Y/N: 
