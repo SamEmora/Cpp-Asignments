@@ -1,9 +1,3 @@
-
-Please enter a dollar amount to convert into Bitcoin and Dogecoin: 500
-Using the conversion rates of 3.8e-05 Bitcoin per dollar and 15.6518 Dogecoin per dollar:
-500 dollars = 0.019 Bitcoin.
-500 dollars = 7825.9 Dogecoin.
-
 // Samuel Morales 
 // MW 9/17/23
 //This program converts dollar into bitcoin and dogecoin
@@ -27,3 +21,9 @@ int main()
 
     return 0;
 }
+
+// Example Output:
+// Please enter a dollar amount to convert into Bitcoin and Dogecoin: 500
+// Using the conversion rates of 3.8e-05 Bitcoin per dollar and 15.6518 Dogecoin per dollar:
+// 500 dollars = 0.019 Bitcoin.
+// 500 dollars = 7825.9 Dogecoin.
