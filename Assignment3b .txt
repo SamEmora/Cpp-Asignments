@@ -1,0 +1,46 @@
+Give me some data and I will predict your future!
+Enter a number: 3
+Enter the name of a country: South Africa
+Enter a type of animal: mongoose
+Enter a funny name: Bubble Guppie
+It's time to tell your future!
+In 3 years, you will move to South Africa.
+You will be gifted a mongoose that you decide to name Bubble Guppie.
+
+// Samuel Morales
+// 8/19/23
+// This program allows the user to make a small mad lib
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    
+    int years; // a vlaue that holds integers in years
+    string country; // a string value that holds characters in country
+    string animal; // a string value that holds characters in animal
+    string funnyName; // a string value that holds characters in funnyName
+
+    cout << "Give me some data and I will predict your future!" << endl;
+    
+    cout << "Enter a number: ";
+    cin >> years; // this asks the user for an integer 
+
+    cin.ignore(); // this allows the buffer to ignore the previous input to add another input. this is a hard definition
+
+    cout << "Enter the name of a country: ";
+    getline(cin, country); // this ask the user for a country while inserting it into the string country
+
+    cout << "Enter a type of animal: ";
+    getline(cin, animal); // this ask the user for a animal while inserting it into the string animal
+
+    cout << "Enter a funny name: ";
+    getline(cin, funnyName); // this ask the user for a funny name  while inserting it into the string funnyName
+
+    cout << "It's time to tell your future!" << endl;
+    cout << "In " << years << " years, you will move to " << country << "." << endl;
+    cout << "You will be gifted a " << animal << " that you decide to name " << funnyName << "." << endl;
+
+    return 0;
+}
