@@ -1,0 +1,134 @@
+Let's play Rock, Paper, Scissors! 
+
+1. Rock
+2. Paper
+3. Scissors
+What do you choose? 2
+
+You chose: Paper
+Computer chose: Paper
+*** It's a tie! ***
+
+Want to play again? (y/n): y
+Let's play Rock, Paper, Scissors! 
+
+1. Rock
+2. Paper
+3. Scissors
+What do you choose? 3
+
+You chose: Scissors
+Computer chose: Paper
+*** You win! ***
+
+Want to play again? (y/n): y
+Let's play Rock, Paper, Scissors! 
+
+1. Rock
+2. Paper
+3. Scissors
+What do you choose? 1
+
+You chose: Rock
+Computer chose: Rock
+*** It's a tie! ***
+
+Want to play again? (y/n): 
+
+
+
+// Samuel Morales
+// 10/29/23
+// This program plays Rock, Paper, Scissors with the user
+
+#include <iostream>
+#include <cstdlib>
+#include <string>
+
+using namespace std;
+
+
+int getComputerChoice(); // Function prototype for getComputerChoice
+void printMenu(); // Function prototype for printMenu
+int chooseWinner(int, int); // Function prototype for chooseWinner
+string displayWordChoice(int); // Function prototype for displayWordChoice
+
+int main() {
+    int computerChoice, playerChoice, winningPlayer; // Declare int variblaes that will hold the choice made by the user and computer
+    char playAgain; // Declares a char variable that holds y or n 
+
+    do { // Calls the computerChoice and printMenu function, after asks the user for their choice
+        computerChoice = getComputerChoice();
+        printMenu();
+        cout << "What do you choose? ";
+        cin >> playerChoice;
+
+        while (playerChoice < 1 || playerChoice > 3) { // This makes sure the users choice is between 1 and 3
+            cout << "That was not a valid choice.\nTry again." << endl;
+            printMenu();
+            cout << "What do you choose? ";
+            cin >> playerChoice;
+        }
+
+        cout << endl << "You chose: " << displayWordChoice(playerChoice) << endl; // Displays your choice
+        cout << "Computer chose: " << displayWordChoice(computerChoice) << endl; // Displays Computer(Cheating)  choice
+
+        winningPlayer = chooseWinner(playerChoice, computerChoice); // Calls the choseWinner function and stores it in winningPlayer
+
+        // This if statement prints the result based off the choices made by both the usre and computer
+        if (winningPlayer == 1)
+            cout << "*** You win! ***" << endl;
+        else if (winningPlayer == 2)
+            cout << "*** Computer Wins! ***" << endl;
+        else
+            cout << "*** It's a tie! ***" << endl;
+        // This ask the user if they want to play again by typing y/Y or n/N
+        cout << endl << "Want to play again? (y/n): ";
+        cin.ignore();
+        cin.get(playAgain);
+
+    } while (playAgain == 'Y' || playAgain == 'y');
+
+    return 0;
+}
+// This generates a random number between 1 and 2 which allows the computer to return the random number/value
+int getComputerChoice() 
+{
+    return (rand() % 3) + 1;
+}
+// This shows the user the menu choices
+void printMenu() 
+{
+    cout << "Let's play Rock, Paper, Scissors!" << endl;
+    cout << "1. Rock\n2. Paper\n3. Scissors\n";
+}
+// 
+int chooseWinner(int playerChoice, int computerChoice) 
+{
+    // This sets the games rules/allows the player to win :)
+    if ((playerChoice == 1 && computerChoice == 3) || 
+        (playerChoice == 2 && computerChoice == 1) ||
+        (playerChoice == 3 && computerChoice == 2)) {
+        
+    return 1; 
+}
+    // This sets the games rules/allows the computer to lose :|
+    else if ((computerChoice == 1 && playerChoice == 3) || 
+             (computerChoice == 2 && playerChoice == 1) ||
+             (computerChoice == 3 && playerChoice == 2)) 
+{
+    return 2; 
+}
+    else {
+        return 3; // This allows for ties
+    }
+}
+// This function store 1, 2, and 3 in the repected game choice and return the players choice
+string displayWordChoice(int choice) {
+    if (choice == 1)
+        return "Rock";
+    else if (choice == 2)
+        return "Paper";
+    else
+        return "Scissors";
+}
