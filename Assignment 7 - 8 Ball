@@ -1,18 +1,3 @@
-What is your question for the all-knowing Magic 8 ball?
-Will the Rangers win the World Series?
-
-Magic 8 ball says... 
-A resounding YES
-Would you like to know the future again? (y/n): y
-What is your question for the all-knowing Magic 8 ball?
-Should I have tacos for dinner tonight?
-
-Magic 8 ball says... 
-I have no idea – you should phone a friend
-Would you like to know the future again? (y/n): n
-
-
-
 // Samuel Morales
 // 11/5/23
 // This programs simulates a 8 ball toy by asking the user a question and giving a response
@@ -65,3 +50,11 @@ int main() {
 
     return 0;
 }
+
+// Example Output:
+// What is your question for the all-knowing Magic 8 ball?
+// Will the Rangers win the World Series?
+
+// Magic 8 ball says... 
+// A resounding YES
+// Would you like to know the future again? (y/n): y
