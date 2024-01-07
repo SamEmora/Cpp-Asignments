@@ -1,61 +1,3 @@
-Harry Potter is being attacked!
-How much health should he start with? (1-100): 75
-What creature is attacking?
-1. Cornish Pixie
-2. Gnome
-3. Basilisk
-4. Dragon
-Enter your choice: 1
-Harry is attacked by a Cornish Pixie which deals 20 damage.
-Harry ends with 55 health.
-He survives!
-
-Harry Potter is being attacked!
-How much health should he start with? (1-100): 30
-What creature is attacking?
-1. Cornish Pixie
-2. Gnome
-3. Basilisk
-4. Dragon
-Enter your choice: 2
-Harry is attacked by a Gnome which deals 40 damage.
-Harry ends with -10 health.
-Oh no...he didn't make it. 
-
-Harry Potter is being attacked!
-How much health should he start with? (1-100): 90
-What creature is attacking?
-1. Cornish Pixie
-2. Gnome
-3. Basilisk
-4. Dragon
-Enter your choice: 3
-Harry is attacked by a Basilisk which deals 80 damage.
-Harry ends with 10 health.
-He survives!
-
-Harry Potter is being attacked!
-How much health should he start with? (1-100): 100
-What creature is attacking?
-1. Cornish Pixie
-2. Gnome
-3. Basilisk
-4. Dragon
-Enter your choice: 4
-Harry is attacked by a Dragon which deals 100 damage.
-Harry ends with 0 health.
-Oh no...he didn't make it. 
-
-Harry Potter is being attacked!
-How much health should he start with? (1-100): 75
-What creature is attacking?
-1. Cornish Pixie
-2. Gnome
-3. Basilisk
-4. Dragon
-Enter your choice: 7
-Sorry. 7 isn't a valid creature. I guess Harry just doesn't want to fight!
-
 // Samuel Morales
 // 8/27/23
 // This programs gives the user a menu for Harry Potter to battle 
@@ -129,3 +71,16 @@ cout << "Invalid starting health! Harry Potter must have health between 1 and 10
 
     return 0;
 }
+
+// Example Output:
+// Harry Potter is being attacked!
+// How much health should he start with? (1-100): 75
+// What creature is attacking?
+// 1. Cornish Pixie
+// 2. Gnome
+// 3. Basilisk
+// 4. Dragon
+// Enter your choice: 1
+// Harry is attacked by a Cornish Pixie which deals 20 damage.
+// Harry ends with 55 health.
+// He survives!
