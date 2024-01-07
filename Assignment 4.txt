@@ -1,0 +1,131 @@
+Harry Potter is being attacked!
+How much health should he start with? (1-100): 75
+What creature is attacking?
+1. Cornish Pixie
+2. Gnome
+3. Basilisk
+4. Dragon
+Enter your choice: 1
+Harry is attacked by a Cornish Pixie which deals 20 damage.
+Harry ends with 55 health.
+He survives!
+
+Harry Potter is being attacked!
+How much health should he start with? (1-100): 30
+What creature is attacking?
+1. Cornish Pixie
+2. Gnome
+3. Basilisk
+4. Dragon
+Enter your choice: 2
+Harry is attacked by a Gnome which deals 40 damage.
+Harry ends with -10 health.
+Oh no...he didn't make it. 
+
+Harry Potter is being attacked!
+How much health should he start with? (1-100): 90
+What creature is attacking?
+1. Cornish Pixie
+2. Gnome
+3. Basilisk
+4. Dragon
+Enter your choice: 3
+Harry is attacked by a Basilisk which deals 80 damage.
+Harry ends with 10 health.
+He survives!
+
+Harry Potter is being attacked!
+How much health should he start with? (1-100): 100
+What creature is attacking?
+1. Cornish Pixie
+2. Gnome
+3. Basilisk
+4. Dragon
+Enter your choice: 4
+Harry is attacked by a Dragon which deals 100 damage.
+Harry ends with 0 health.
+Oh no...he didn't make it. 
+
+Harry Potter is being attacked!
+How much health should he start with? (1-100): 75
+What creature is attacking?
+1. Cornish Pixie
+2. Gnome
+3. Basilisk
+4. Dragon
+Enter your choice: 7
+Sorry. 7 isn't a valid creature. I guess Harry just doesn't want to fight!
+
+// Samuel Morales
+// 8/27/23
+// This programs gives the user a menu for Harry Potter to battle 
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+// The following constants are declared inside the first brace used for the rest of the program
+const int PIXIE_DAMAGE = 20; 
+const int GNOME_DAMAGE = 40;
+const int BASILISK_DAMAGE = 80;
+const int DRAGON_DAMAGE = 100;
+
+// These int varibles are decalred inside the first brace and hold values used to describe Harry Potters starting health and menu choice
+int startingHealth; 
+int menuChoice;
+
+cout <<"Harry Potter is being attacked!\n";
+cout <<"How much health should he start with? (1-100): ";
+cin >> startingHealth; // Ask the for Harry Potters starting health and puts it in the variable startingHealth
+
+if (startingHealth < 1 || startingHealth > 100) { // This if/else statement is used to stop the user from giving Harry Potter negative helath or extra health and asking again
+cout << "Invalid starting health! Harry Potter must have health between 1 and 100." << endl;
+    } else {
+        cout << "What creature is attacking?" << endl;
+        cout << "1. Cornish Pixie" << endl;
+        cout << "2. Gnome" << endl;
+        cout << "3. Basilisk" << endl;
+        cout << "4. Dragon" << endl;
+        cout << "Enter your choice: ";
+        cin >> menuChoice;
+
+        int damage = 0;// This creates the variable damage to hold the number taken by the creature chosen
+        string creature;// This string is used to keep the creatures name in the creature string
+        // It took me so long to find out what I was missing was a string because my code kept saying harry is attacked by 1
+        switch (menuChoice) { // This switch realeses the output of what the user choses
+            case 1: // if the user picks 1 this will end the switch
+                damage = PIXIE_DAMAGE;
+                creature = "Cornish Pixie";
+                break; // If the user picks anything else that isnt 1 moves this will move it too the next case
+            case 2:
+                damage = GNOME_DAMAGE;
+                creature = "Gnome";
+                break;
+            case 3:
+                damage = BASILISK_DAMAGE;
+                creature = "Basilisk";
+                break;
+            case 4:
+                damage = DRAGON_DAMAGE;
+                creature = "Dragon";
+                break;
+            default:// If the user picks anything that is NOT 1-4 thi message will print with what the user chose
+                cout << "Sorry. " << menuChoice << " isn't a valid creature. I guess Harry just doesn't want to fight!" << endl;
+                break;
+        }
+
+          if (damage > 0) {// This if statement checks the damage dealt is valid
+            startingHealth -= damage;// This subtracts damage from starting health
+            cout << "Harry is attacked by a " << creature << " which deals " << damage << " damage." << endl;// This cout statement prints the creature chosen ande shows the damage taken
+            cout << "Harry ends with " << startingHealth << " health." << endl;// This cout statement prints Harry Potters ending health
+
+            if (startingHealth <= 0) {// This if statment is only used if startingHealth is less than or equal to zero
+                cout << "Oh no...he didn't make it. " << endl;
+            } else {// This else statement prints this message if startingHealth is more than 0
+                cout << "He survives!" << endl;
+            }
+        }
+    }
+
+    return 0;
+}
