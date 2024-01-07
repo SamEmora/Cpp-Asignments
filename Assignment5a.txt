@@ -1,0 +1,84 @@
+Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is.
+How high would you like the guessing range to be? 50
+I'm thinking of a number! What is it? 25
+Too low. Try again: 30
+Too low. Try again: 40
+Too high. Try again: 36
+Too low. Try again: 37
+Too low. Try again: 38
+Too low. Try again: 39
+You guessed it! It took 7 tries.
+*** You've set a new record for the lowest number of guesses! ***
+Would you like to play again? Y/N: y
+Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is.
+How high would you like the guessing range to be? 50
+I'm thinking of a number! What is it? 30
+Too high. Try again: 20
+Too high. Try again: 10
+You guessed it! It took 3 tries.
+*** You've set a new record for the lowest number of guesses! ***
+Would you like to play again? Y/N: y
+Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is.
+How high would you like the guessing range to be? 50
+I'm thinking of a number! What is it? 25
+Too high. Try again: 30
+Too high. Try again: 10
+Too low. Try again: 20
+Too high. Try again: 15
+Too low. Try again: 16
+Too low. Try again: 17
+Too low. Try again: 18
+Too low. Try again: 19
+You guessed it! It took 9 tries.
+Would you like to play again? Y/N:  
+
+
+// Samuel Morales
+// 9/12/23
+// This programs creates a Guessing Game
+#include <iostream>
+#include <cstdlib> // This allows the use of rand
+
+using namespace std;
+
+int main() {
+    int limit; // The user chosen limit is stored here
+    int rightNumber; // Stores the randomized number every time the program is ran
+    int guess; // Stores the guess the user chooses
+    int attempts; // Stores the number of guesses
+    char playAgain; // Stores the Y/y or N/n if the player chooses to play again
+    int highScores = 2147483647; // After countless attempts I just optted to use the highest int value if someone really wants to play this game until the end of time
+
+    do {
+        cout << "Welcome to the guessing game! I'll choose a random number between 1 and a limit of your choice, and you guess what it is." << endl;
+        cout << "How high would you like the guessing range to be? ";
+        cin >> limit; // Ask the user for a number/limit adn stores it in the variable limit
+        int rightNumber = (rand() % limit) + 1; // Its a little hard to explain but this makes sure that the random number chosen by the computer is between 1 and the limit
+        int guess; // This will store the number guessed
+        int attempts = 0; // This initializes attempts 
+        cout << "I'm thinking of a number! What is it? ";
+
+        do {
+            cin >> guess; // Asks the user for a number between 1 and the limit
+            attempts++; // This will add 1 to attempts everimte the user guesses
+            // These line are self explanatory
+            if (guess < rightNumber) { 
+                cout << "Too low. Try again: "; // Will print if the user chooses a nomber lower than the right one
+            } else if (guess > rightNumber) {
+                cout << "Too high. Try again: "; // Will print if the user chooses a nomber higher than the right one
+            }
+        } while (guess != rightNumber); // This loop is repeated if the user does not guess correctly
+        
+        cout << "You guessed it! It took " << attempts << " tries." << endl; // Lets the user know they got it right and shows the number of attempts.
+        // These next lines will allow the number of attempts to change if the number of attempts is lower than the previous game
+        if (attempts < highScores) {
+            highScores = attempts;
+            cout << "*** You've set a new record for the lowest number of guesses! ***" << endl;
+        }
+        // These next lines ask the user to play again whether tehy type a lower or uppercase y and repeats the game if chosen
+        cout << "Would you like to play again? Y/N: ";
+        cin >> playAgain; 
+    } while (playAgain == 'Y' || playAgain == 'y');
+
+    return 0;
+}
